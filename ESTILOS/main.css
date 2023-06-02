@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(214, 188, 188);
+}
+
+#seccion1 {
+    height: 100vh;
+}
+
+.barra {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(rgba(65, 11, 18, 0.5), rgba(65, 11, 18, 0.999));
+    position: absolute;
+    top: 35vh;
+    z-index: -1;
+}
+
+.portadaSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.portadaContenedor {
+    width: 25rem;
+    border-radius: 60%;
+    height: 25rem;
+    border: none;
+    overflow: hidden;
+    margin-bottom: -30px;
+    box-shadow: 0px 6px 10px 2px rgb(32, 31, 31);
+}
+
+.portada {
+    width: 100%;
+    border-radius: 60%;
+    height: 100%;
+    border: none;
+    transition: 0.5s;
+    /* para no distorcionar la imagen */
+    object-fit: cover;
+}
+
+.portada:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.navegacion ul {
+    display: flex;
+    justify-content: center;
+    height: 8vh;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.navegacion ul li {
+    list-style: none;
+    display: flex;
+    padding: 2rem;
+    font-size: larger;
+}
+
+ul li a {
+    text-decoration: none;
+    color: rgb(130, 122, 122);
+}
+
+.menu {
+    display: none;
+    width: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.menu:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+
+li a:hover,
+.btnInicio {
+    transition: 0.2s;
+    color: rgb(61, 40, 40);
+    cursor: pointer;
+    text-decoration: overline;
+}
+
+.titulo {
+    color: white;
+    font-style: italic;
+    font-family: "Lucida Handwriting", "Apple Chancery", cursive;
+    font-size: 3rem;
+    padding: 0.5rem;
+}
+
+.sobremi {
+    text-align: center;
+    font-size: larger;
+    width: 70vw;
+}
+
+.btnGaleria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    width: 10vw;
+    height: 5vh;
+    border: 3px solid rgb(65, 11, 18);
+    font-size: 20px;
+    animation: btnScale 1s infinite;
+    color: rgb(65, 11, 18);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.btnGaleria:hover {
+    background: rgb(65, 11, 18);
+    color: white;
+    border: none;
+    cursor: pointer;
+    animation: none;
+}
+
+@keyframes btnScale {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#seccion2 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.girasoles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    background: url(../Imagenes/girasoles.jpg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 30vh;
+    margin-top: 10px;
+    filter: grayscale(100%);
+    opacity: 90%;
+    margin-bottom: 1em;
+    animation: moverGirasol 20s infinite linear alternate;
+}
+
+.aboutTitle {
+    font-family: "Lucida Handwriting", "Apple Chancery", cursive;
+    color: white;
+}
+
+@keyframes moverGirasol {
+    from {
+        background-position: bottom left;
+    }
+
+    to {
+        background-position: top right;
+    }
+}
+
+.carta {
+    display: flex;
+    margin-bottom: 50px;
+    /* background: rgb(99, 53, 53); */
+    justify-content: center;
+    align-items: center;
+}
+
+.carta fieldset {
+    background: linear-gradient(rgba(189, 165, 165, 0.5), rgba(189, 165, 165, 0.99));
+    justify-content: space-around;
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    border: none;
+    color: white;
+    padding: 3%;
+    border-radius: 20px;
+    width: 45vw;
+}
+
+.carta fieldset:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
+    box-shadow: 0px 2px 10px rgb(32, 31, 31);
+    border-color: white;
+}
+
+.carta fieldset p {
+    width: 50%;
+}
+
+.imgArticulo {
+
+    width: 180px;
+    filter: invert(100%);
+}
+
+@media screen and (max-width:1200px) {
+    .imgArticulo {
+
+        width: 160px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+
+    header {
+        display: block;
+        position: absolute;
+        top: 2;
+        left: 0;
+        height: 27rem;
+        width: 10rem;
+    }
+
+    .navegacion {
+        background-color: black;
+        display: block;
+        position: absolute;
+        top: 2;
+        left: 0;
+        height: 27rem;
+        width: 10rem;
+        background-color: rgb(59, 56, 56);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .navegacion-visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navegacion ul {
+        color: white;
+        display: block;
+        flex-direction: column;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+    }
+
+    li:hover {
+        transform: scale(1);
+        background-color: rgb(78, 6, 6);
+        cursor: pointer;
+        color: white
+    }
+
+    li a:hover {
+        color: white;
+        transform: scale(1);
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .portadaContenedor {
+        width: 15rem;
+        height: 15rem;
+        margin-bottom: 2rem;
+    }
+
+    .btnGaleria {
+        margin-top: 40px;
+        border: 2px solid white;
+        color: white;
+    }
+
+    .btnGaleria:hover {
+        background-color: white;
+        color: rgb(78, 6, 6);
+    }
+
+    .btnInicio {
+        color: white;
+    }
+
+    .sobremi {
+        color: #fff;
+    }
+
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .carta {
+        display: block;
+    }
+
+    .carta fieldset {
+        width: 90%;
+        font-size: 13px;
+    }
+
+    .imgArticulo {
+
+        width: 120px;
+    }
+
+    .girasoles {
+        background-attachment: local;
+        margin-bottom: 0.5rem;
+    }
+
+    .aboutTitle {
+        font-size: 30px;
+    }
+
+}
+
+.imagensinanimar {
+    width: 300px;
+    opacity: 0;
+}
+
+.parrafoAnimado {
+    animation: animarParrafo 1s ease-out;
+    opacity: 1;
+}
+
+@keyframes animarParrafo {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* galeria  */
+.seccion3 {
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    padding: 70px;
+
+}
+
+.contImgGaleria {
+    width: 18rem;
+    border-radius: 1%;
+    height: 18rem;
+    border: none;
+    overflow: hidden;
+    /* margin-bottom: 20px; */
+    box-shadow: 0px 6px 10px 2px rgb(32, 31, 31);
+}
+
+.imgGaleria {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: 0.5s;
+    object-fit: cover;
+}
+
+.imgGaleria:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: 1s;
+}
+
+.titleGallery {
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+    color: rgb(89, 84, 84);
+    width: 80%;
+    margin: 50px auto;
+}
+
+.titleGallery::before {
+    width: 100%;
+    content: "";
+    display: block;
+    height: 2px;
+    position: absolute;
+    background-color: rgb(89, 84, 84);
+    top: 70%;
+    z-index: -1;
+}
+
+.titleGallery span {
+    font-size: 40px;
+    font-family: "Lucida Handwriting", "Apple Chancery", cursive;
+    background-color: rgb(214, 188, 188);
+}
+
+.cont-img-full {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(51, 46, 46, 0.594);
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.img-full {
+    height: 600px;
+    width: 400px;
+    object-fit: cover;
+}
+
+.x {
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    cursor: pointer;
+    width: 3rem;
+    text-align: center;
+    border-radius: 20%;
+}
+
+.x:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+
+}
+
+/* footer  */
+
+.footer {
+    background: linear-gradient(rgba(65, 11, 18, 0.5), rgba(65, 11, 18, 0.999));
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-text {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.footer-links li {
+    margin: 0 10px;
+    background: none;
+}
+
+.footer-redes {
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+}
+
+.footer-redes li{
+    margin: 10px;
+    background: none;
+}
+
+.footer-redes img {
+    filter: invert(100%);
+    width: 40px;
+    border-radius: 50%;
+}
+
+.footer-redes img:hover{
+    transform: rotateY(360deg);
+    transition: 1s;
+}
